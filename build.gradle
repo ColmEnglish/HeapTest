@@ -1,0 +1,22 @@
+
+buildscript {
+    // At the top of the buildscript block, add a property for the SDK version.
+    ext.heapVersion = '1.10.+'
+    // ...
+
+    dependencies {
+        // Within buildscript.dependencies, add the classpath dependency below.
+        // Note the double quotes, which are required to interpolate the version.
+        classpath "com.heapanalytics.android:heap-android-gradle:$heapVersion"
+    }
+}
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
